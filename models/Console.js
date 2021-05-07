@@ -5,7 +5,8 @@ const consoleSchema = new Schema({
   make: { type: String },
   model: { type: String },
   year: { type: Number },
-  genre: { type: Schema.Types.ObjectId, ref: "Genre", default: null },
+  genre: [{ type: Schema.Types.ObjectId, ref: "Genre", default: null }],
+  game:[{type: Schema.Types.ObjectId, ref: "Game", default: null }]
 });
 
 const Console = mongoose.model("Console", consoleSchema);
