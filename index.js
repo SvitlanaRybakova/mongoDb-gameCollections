@@ -9,6 +9,7 @@ const uri =
 
 const consoleRoutes = require("./routes/consoleRoutes");
 const genreRoutes = require("./routes/genreRoutes");
+const gameRoutes = require("./routes/gameRoutes")
 
 // makes the req.body available to us Нужен для POST запросов
 app.use(express.json());
@@ -26,8 +27,9 @@ mongoose.connect(uri, {
   console.log("ERROR: ", err);
 })
 
-app.use("/api/v1/consols", consoleRoutes);
+app.use("/api/v1/consoles", consoleRoutes);
 app.use("/api/v1/genres", genreRoutes);
+app.use("/api/v1/games", gameRoutes);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
